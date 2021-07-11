@@ -1,21 +1,16 @@
 html, body {
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
-.container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 100%;
+body {
   display: grid;
   background: radial-gradient(at top, #5e4082, #3a124d);
 }
 
 .picture {
-  place-self: center  ;
+  place-self: center;
   max-width: calc(100vw - 2rem);
   height: 80vh;
 }
