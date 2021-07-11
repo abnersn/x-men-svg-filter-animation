@@ -19,23 +19,3 @@ html, body {
   max-width: calc(100vw - 2rem);
   height: 80vh;
 }
-
-h1 {
-  font-size: 1.953em;
-  line-height: 1.2;
-  font-weight: bold;
-  margin-bottom: .5em;
-}
-
-big {
-  font-size: 1.562em;
-}
-
-h2 {
-  font-size: 2.441em;
-  margin-top: .5em;
-}
-
-.picture {
-  will-change: contents;
-}
