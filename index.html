@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mystique</title>
+    <title>WandaVision</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
     <link rel="stylesheet" href="style.css">
@@ -15,8 +15,20 @@
             <filter id="distort">
                 <feTurbulence
                     type="fractalNoise"
-                    baseFrequency=".02,0.05"
+                    baseFrequency=".03,0.05"
                     numOctaves="1"
+                    result="distortion"
+                />
+                <feTurbulence
+                    type="fractalNoise"
+                    baseFrequency=".02,.5"
+                    numOctaves="3"
+                    result="noise"
+                />
+                <feBlend
+                    in="distortion"
+                    in2="noise"
+                    mode="screen"
                     result="turbulence"
                 />
                 <feDisplacementMap
@@ -25,13 +37,25 @@
                     scale="50"
                     xChannelSelector="R"
                     yChannelSelector="R"
-                    result="distort"
                 />
             </filter>
+            <linearGradient id="burn">
+                <stop offset="95%" stop-color="rgba(255, 0, 0, 0)" />
+                <stop offset="97%" stop-color="red" />
+                <stop offset="97.5%" stop-color="white" />
+                <stop offset="98%" stop-color="red" />
+                <stop offset="99%" stop-color="rgba(255, 0, 0, 0)" />
+            </linearGradient>
+            <mask id="mask">
+                <g filter="url(#distort)">
+                    <rect class="mask" x="-200%" y="0" width="200%" height="100%" fill="white" />
+                </g>
+            </mask>
         </defs>
-        <image id="car" x="10%" y="10%" width="80%" height="80%" xlink:href="images/car.jpg"/>
-        <g filter="url(#distort)">
-            <rect class="mask" x="-200%" y="0" width="200%" height="100%" fill="white" />
+        <image id="car" x="10%" y="10%" width="80%" height="80%" xlink:href="images/vintage.jpg"/>
+        <image id="car" x="10%" y="10%" width="80%" height="80%" xlink:href="images/modern.jpg" mask="url(#mask)"/>
+        <g filter="url(#distort)" style="mix-blend-mode: color-dodge;">
+            <rect class="mask" x="-195%" y="0" width="200%" height="100%" fill="url(#burn)" />
         </g>
     </svg>
     <script src="index.js" type="module"></script>
