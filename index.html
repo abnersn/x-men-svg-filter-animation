@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mystique</title>
 
+    <link rel="stylesheet href="https://fonts.googleapis.com/css2?family=Cardo:wght@700&display=swap"">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,11 +14,30 @@
     <div class="container">
         <svg class="picture" viewBox="0 0 196 296" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <defs>
+                <filter id="distort">
+                    <feTurbulence
+                        type="turbulence"
+                        baseFrequency="0.08"
+                        numOctaves="2"
+                        result="turbulence"
+                    />
+                    <feDisplacementMap
+                        in2="turbulence"
+                        in="SourceGraphic"
+                        scale="50"
+                        xChannelSelector="R"
+                        yChannelSelector="G"
+                    />
+                </filter>
                 <mask id="mask_mystique">
-                    <rect class="mask" x="0" y="-100%" width="196" height="296" fill="white"/>
+                    <g filter="url(#distort)">
+                        <rect class="mask" x="0" y="-100%" width="196" height="296" fill="white"/>
+                    </g>
                 </mask>
                 <mask id="mask_transformed">
-                    <rect class="mask" x="0" y="0" width="196" height="296" fill="white"/>
+                    <g filter="url(#distort)">
+                        <rect class="mask" x="0" y="0" width="196" height="296" fill="white"/>
+                    </g>
                 </mask>
             </defs>
             <rect class="bg-color" x="0" y="0" width="196" height="296" fill="#ffd11b"/>
