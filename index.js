@@ -1,6 +1,8 @@
 import gsap from "https://cdn.skypack.dev/gsap@3.7.0";
 
 const tl = gsap.timeline({
+  // repeat: -1,
+  // yoyo: true,
   defaults: {
     ease: 'Quad.easeInOut'
   }
