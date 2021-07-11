@@ -22,7 +22,7 @@ tl
     translateY: '130%',
     duration: 3
   })
-  .to('.background', {
+  .to('.bg-color', {
     fill: '#ffd11b',
     delay: 1,
     duration: 1.5
@@ -43,7 +43,7 @@ tl
     translateY: '-20%',
     duration: 3
   })
-  .to('.background', {
+  .to('.bg-color', {
     fill: '#4a5eb2',
     delay: 1,
     duration: 1
