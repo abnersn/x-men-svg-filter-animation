@@ -1,36 +1,43 @@
-const { extendDefaultPlugins } = require('svgo')
 module.exports = {
     multipass: true,
     js2svg: {
         indent: 4, // string with spaces or number of spaces. 4 by default
         pretty: true // boolean, false by default
     },
-    plugins: extendDefaultPlugins([
-        {
-            name: 'moveGroupAttrsToElems',
-            active: true
-        },
-        {
-            name: 'cleanupIDs',
-            active: false
-        },
-        {
-            name: 'collapseGroups',
-            active: false
-        },
-        {
-            name: 'convertStyleToAttrs',
-            active: true
-        },
-        {
-            name: 'removeAttrs',
-            params: {
-                attrs: '(width="100%"|stroke.*)'
-            }
-        },
-        {
-            name: 'removeDimensions',
-            active: true
-        }
-    ])
+    plugins: [
+        'removeDoctype',
+        'removeXMLProcInst',
+        'removeComments',
+        'removeMetadata',
+        'removeEditorsNSData',
+        'cleanupAttrs',
+        'mergeStyles',
+        'inlineStyles',
+        'minifyStyles',
+        'removeUselessDefs',
+        'cleanupNumericValues',
+        'convertColors',
+        'removeUnknownsAndDefaults',
+        'removeNonInheritableGroupAttrs',
+        'removeUselessStrokeAndFill',
+        'removeViewBox',
+        'cleanupEnableBackground',
+        'removeHiddenElems',
+        'removeEmptyText',
+        'convertShapeToPath',
+        'convertEllipseToCircle',
+        'moveElemsAttrsToGroup',
+        'moveGroupAttrsToElems',
+        'convertPathData',
+        'convertTransform',
+        'removeEmptyAttrs',
+        'removeEmptyContainers',
+        'mergePaths',
+        'convertStyleToAttrs',
+        'removeUnusedNS',
+        'removeDimensions',
+        'sortDefsChildren',
+        'removeTitle',
+        'removeDesc'
+    ]
 }
