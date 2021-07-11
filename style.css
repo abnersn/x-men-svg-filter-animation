@@ -6,7 +6,7 @@ html, body {
 
 body {
   display: grid;
-  background: radial-gradient(at top, #5e4082, #3a124d);
+  background: black;
   padding: 1rem;
   box-sizing: border-box;
 }
@@ -15,5 +15,4 @@ body {
   place-self: center;
   max-width: 100%;
   height: 80vh;
-  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5));
 }

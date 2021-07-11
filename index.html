@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <svg class="picture" viewBox="0 0 196 296" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <svg id="picture" class="picture" viewBox="0 0 296 196" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs>
             <filter id="distort">
                 <feTurbulence
-                    type="turbulence"
-                    baseFrequency="0.08"
-                    numOctaves="2"
+                    type="fractalNoise"
+                    baseFrequency=".02,0.05"
+                    numOctaves="1"
                     result="turbulence"
                 />
                 <feDisplacementMap
@@ -24,25 +24,15 @@
                     in="SourceGraphic"
                     scale="50"
                     xChannelSelector="R"
-                    yChannelSelector="G"
+                    yChannelSelector="R"
+                    result="distort"
                 />
             </filter>
-            <mask id="mask_mystique">
-                <g filter="url(#distort)">
-                    <rect class="mask" x="0" y="-100%" width="100%" height="100%" fill="white"/>
-                </g>
-            </mask>
-            <mask id="mask_transformed">
-                <g filter="url(#distort)">
-                    <rect class="mask" x="0" y="0" width="100%" height="100%" fill="white"/>
-                </g>
-            </mask>
         </defs>
-        <rect class="bg-color" x="0" y="0" width="100%" height="100%" fill="#4a5eb2"/>
-        <image id="background" x="0" y="0" width="100%" height="100%" xlink:href="images/background.svg"/>
-        <image id="transformed" mask="url(#mask_transformed)" x="0" y="0" width="100%" height="100%" xlink:href="images/transformed.svg"/>
-        <image id="mystique" mask="url(#mask_mystique)" x="0" y="0" width="100%" height="100%" xlink:href="images/mystique.svg"/>
-        <image id="foreground" x="0" y="0" width="100%" height="100%" xlink:href="images/foreground.svg"/>
+        <image id="car" x="10%" y="10%" width="80%" height="80%" xlink:href="images/car.jpg"/>
+        <g filter="url(#distort)">
+            <rect class="mask" x="-200%" y="0" width="200%" height="100%" fill="white" />
+        </g>
     </svg>
     <script src="index.js" type="module"></script>
 </body>

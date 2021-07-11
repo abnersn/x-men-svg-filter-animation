@@ -9,19 +9,12 @@ const tl = gsap.timeline({
   paused: true
 })
 
-tl
-  .to('.mask', {
-    translateY: '100%',
-    duration: 3,
-  })
-  .to('.bg-color', {
-    attr: {
-      fill: '#ffd11b'
-    },
-    duration: 2
-  }, '<+=1')
+tl.to('.mask', {
+  translateX: '50%',
+  duration: 20
+})
 
-const $foreground = document.getElementById('foreground')
+const $picture = document.getElementById('picture')
 let frame = null
 
 function handleMoveEvent(ev) {
@@ -30,17 +23,18 @@ function handleMoveEvent(ev) {
   }
 
   frame = window.requestAnimationFrame(() => {
-    const yPos = ev.type === 'mousemove' ? ev.clientY : ev.touches[0].clientY
-    const rect = $foreground.getBoundingClientRect();
+    const xPos = ev.type === 'mousemove' ? ev.clientX : ev.touches[0].clientX
+    const rect = $picture.getBoundingClientRect();
   
-    const relPos = (yPos - rect.top) / (rect.bottom - rect.top)
+    const relPos = (xPos - rect.left) / (rect.right - rect.left)
     if (relPos < 0 || relPos > 1) {
       return
     }
+    // console.log(relPos)
     tl.progress(relPos)
   })
 }
 
-$foreground.addEventListener('mousemove', handleMoveEvent)
-$foreground.addEventListener('touchmove', handleMoveEvent)
-$foreground.addEventListener('touchstart', handleMoveEvent)
+$picture.addEventListener('mousemove', handleMoveEvent)
+$picture.addEventListener('touchmove', handleMoveEvent)
+$picture.addEventListener('touchstart', handleMoveEvent)
