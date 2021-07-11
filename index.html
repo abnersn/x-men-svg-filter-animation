@@ -12,10 +12,18 @@
 <body>
     <div class="container">
         <svg class="picture" viewBox="0 0 196 296" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+                <mask id="mask_mystique">
+                    <rect class="mask" x="0" y="-100%" width="196" height="296" fill="white"/>
+                </mask>
+                <mask id="mask_transformed">
+                    <rect class="mask" x="0" y="0" width="196" height="296" fill="white"/>
+                </mask>
+            </defs>
             <rect class="bg-color" x="0" y="0" width="196" height="296" fill="#ffd11b"/>
             <image id="background" x="0" y="0" width="196" height="296" xlink:href="images/background.svg"/>
-            <image id="transformed" x="0" y="0" width="196" height="296" xlink:href="images/transformed.svg"/>
-            <image id="mystique" x="0" y="0" width="196" height="296" xlink:href="images/mystique.svg"/>
+            <image id="transformed" mask="url(#mask_transformed)" x="0" y="0" width="196" height="296" xlink:href="images/transformed.svg"/>
+            <image id="mystique" mask="url(#mask_mystique)" x="0" y="0" width="196" height="296" xlink:href="images/mystique.svg"/>
             <image id="foreground" x="0" y="0" width="196" height="296" xlink:href="images/foreground.svg"/>
         </svg>
     </div>

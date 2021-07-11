@@ -9,45 +9,9 @@ const tl = gsap.timeline({
 })
 
 tl
-  .fromTo('.mask',
-  {
-    translateX: '-50%',
-    scale: 2,
-    translateY: '-20%',
+  .to('.mask', {
+    translateY: '100%',
+    repeat: 1,
+    yoyo: true,
     duration: 3
-  },
-  {
-    translateX: '0%',
-    scale: 2,
-    translateY: '130%',
-    duration: 3
-  })
-  .to('.bg-color', {
-    fill: '#ffd11b',
-    delay: 1,
-    duration: 1.5
-  }, '<')
-  .set('.turbulence', {
-    attr: { seed: Date.now() }
-  })
-  .fromTo('.mask',
-  {
-    translateX: '0%',
-    scale: 2,
-    translateY: '-170%',
-    duration: 3
-  },
-  {
-    translateX: '-50%',
-    scale: 2,
-    translateY: '-20%',
-    duration: 3
-  })
-  .to('.bg-color', {
-    fill: '#4a5eb2',
-    delay: 1,
-    duration: 1
-  }, '<')
-  .set('.turbulence', {
-    attr: { seed: Date.now() }
   })
