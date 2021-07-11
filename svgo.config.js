@@ -1,9 +1,18 @@
 module.exports = {
+    /* Doing multiple passes of svgo helps to ensure maximum optimization */
     multipass: true,
+
+    /* Format the output to preserve readability */
     js2svg: {
-        indent: 4, // string with spaces or number of spaces. 4 by default
-        pretty: true // boolean, false by default
+        indent: 4,
+        pretty: true
     },
+
+    /* This is the standard SVGO plugins list, with a few modifications:
+        - cleanupIDs
+        - collapseGroups
+        + convertStyleToAttrs
+        + removeDimensions */
     plugins: [
         'removeDoctype',
         'removeXMLProcInst',
