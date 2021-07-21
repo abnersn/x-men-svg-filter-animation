@@ -64,6 +64,8 @@ Comment about mouse events and removing the loop.
 
 // Code
 
+## Making it interactive
+
 ## Extra
 
 Wandavision-style photo transition.
