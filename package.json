@@ -1,0 +1,33 @@
+{
+  "name": "x-men-svg-filter-animation",
+  "version": "1.0.0",
+  "description": "Superhero-inspired SVG animation effect with filters",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build --no-minify index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abnersn/x-men-svg-filter-animation.git"
+  },
+  "keywords": [
+    "svg",
+    "filter",
+    "animation",
+    "gsap"
+  ],
+  "author": "Abner Nascimento",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abnersn/x-men-svg-filter-animation/issues"
+  },
+  "homepage": "https://github.com/abnersn/x-men-svg-filter-animation#readme",
+  "dependencies": {
+    "gsap": "^3.7.1",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}

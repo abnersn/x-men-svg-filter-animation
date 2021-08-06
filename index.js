@@ -1,5 +1,5 @@
-import gsap from "https://cdn.skypack.dev/gsap@3.7.0";
-import { throttle } from "https://cdn.skypack.dev/lodash@4.17.15";
+import gsap from "gsap";
+import { throttle } from "lodash";
 
 const tl = gsap.timeline({
   paused: true,
