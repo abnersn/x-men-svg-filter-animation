@@ -1,49 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mystique</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
-    <link rel="stylesheet" href="style.css">
-</head>
+<html lang="en" class="no-js">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Mystique | Codrops</title>
+        <meta name="description" content="Superhero Animation with SVG Filters and Masks" />
+        <meta name="keywords" content="mystique, svg filter, svg mask, gsap, animation" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="stylesheet" href="https://use.typekit.net/fxn5pry.css">
+        <link rel="stylesheet" href="style.css">
+        <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+    </head>
 <body>
-    <svg class="picture" viewBox="0 0 196 296" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <defs>
-            <filter id="distort">
-                <feTurbulence
-                    type="turbulence"
-                    baseFrequency="0.08"
-                    numOctaves="2"
-                    result="turbulence"
-                />
-                <feDisplacementMap
-                    in2="turbulence"
-                    in="SourceGraphic"
-                    scale="50"
-                    xChannelSelector="R"
-                    yChannelSelector="G"
-                />
-            </filter>
-            <mask id="mask_mystique">
-                <g filter="url(#distort)">
-                    <rect class="mask" x="0" y="-100%" width="100%" height="100%" fill="white"/>
-                </g>
-            </mask>
-            <mask id="mask_transformed">
-                <g filter="url(#distort)">
-                    <rect class="mask" x="0" y="0" width="100%" height="100%" fill="white"/>
-                </g>
-            </mask>
-        </defs>
-        <rect id="bg-color" x="0" y="0" width="100%" height="100%" fill="#4a5eb2"/>
-        <image id="background" x="0" y="0" width="100%" height="100%" xlink:href="images/background.svg"/>
-        <image id="transformed" mask="url(#mask_transformed)" x="0" y="0" width="100%" height="100%" xlink:href="images/transformed.svg"/>
-        <image id="mystique" mask="url(#mask_mystique)" x="0" y="0" width="100%" height="100%" xlink:href="images/mystique.svg"/>
-        <image id="foreground" x="0" y="0" width="100%" height="100%" xlink:href="images/foreground.svg"/>
-    </svg>
+    <main>
+        <div class="frame">
+            <h1 class="frame__title">Superhero Animation <br>with SVG Filters and Masks</h1>
+            <nav class="frame__links">
+                <a href="https://tympanus.net/Tutorials/MagicalMarbles/">Previous demo</a>
+                <a href="https://tympanus.net/codrops/?p=55944">Article</a>
+                <a href="https://github.com/abnersn/x-men-svg-filter-animation">GitHub</a>
+            </nav>
+        </div>
+        <svg class="picture" viewBox="0 0 196 296" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+                <filter id="distort">
+                    <feTurbulence
+                        type="turbulence"
+                        baseFrequency="0.08"
+                        numOctaves="2"
+                        result="turbulence"
+                    />
+                    <feDisplacementMap
+                        in2="turbulence"
+                        in="SourceGraphic"
+                        scale="50"
+                        xChannelSelector="R"
+                        yChannelSelector="G"
+                    />
+                </filter>
+                <mask id="mask_mystique">
+                    <g filter="url(#distort)">
+                        <rect class="mask" x="0" y="-100%" width="100%" height="100%" fill="white"/>
+                    </g>
+                </mask>
+                <mask id="mask_transformed">
+                    <g filter="url(#distort)">
+                        <rect class="mask" x="0" y="0" width="100%" height="100%" fill="white"/>
+                    </g>
+                </mask>
+            </defs>
+            <rect id="bg-color" x="0" y="0" width="100%" height="100%" fill="#4a5eb2"/>
+            <image id="background" x="0" y="0" width="100%" height="100%" xlink:href="images/background.svg"/>
+            <image id="transformed" mask="url(#mask_transformed)" x="0" y="0" width="100%" height="100%" xlink:href="images/transformed.svg"/>
+            <image id="mystique" mask="url(#mask_mystique)" x="0" y="0" width="100%" height="100%" xlink:href="images/mystique.svg"/>
+            <image id="foreground" x="0" y="0" width="100%" height="100%" xlink:href="images/foreground.svg"/>
+        </svg>
+    </main>
     <script src="index.js"></script>
 </body>
 </html>
