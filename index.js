@@ -10,7 +10,7 @@ const tl = gsap.timeline({
 
 tl
   .to('.mask', {
-    translateY: '100%',
+    translateY: 296,
     duration: 3,
   })
   .to('#bg-color', {
