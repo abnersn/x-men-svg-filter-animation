@@ -1,12 +1,12 @@
 # Superhero SVG Filter Animation
 
-*A description of the demo goes here.*
+An interactive superhero-like illustration effect for the web using SVG filters and masks.
 
-![Image Title](https://generative-placeholders.glitch.me/image?width=800&height=600")
+![Image Title](https://tympanus.net/codrops/wp-content/uploads/2021/08/mystique.jpg)
 
-[Article on Codrops](https://tympanus.net/codrops/?p=)
+[Article on Codrops](https://tympanus.net/codrops/?p=55944)
 
-[Demo](http://tympanus.net/Development/.../)
+[Demo](http://tympanus.net/Tutorials/Mystique/)
 
 
 ## Installation
@@ -38,7 +38,7 @@ npm run build
 
 ## Misc
 
-Follow *Author*: [GitHub](https://github.com/abnersn) 
+Follow Abner: [GitHub](https://github.com/abnersn) 
 
 Follow Codrops: [Twitter](http://www.twitter.com/codrops), [Facebook](http://www.facebook.com/codrops), [GitHub](https://github.com/codrops), [Instagram](https://www.instagram.com/codropsss/)
 
